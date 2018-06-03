@@ -1,0 +1,28 @@
+help:
+  summary: "snstoolsはsns関連で使っているツールです"
+  exec: echo "Enjoy SNS!"
+
+
+export:
+  summary: "MongoDBからTootを抽出してtextファイルに出力します"
+  command: mongo --quiet mstdn ./export-toot.js > toots.txt
+
+
+cleanup:
+  summary: "抽出したTootにはゴミ(HTMLタグなど)がふくまれているので除去する"
+  command: python cleanup-toots.py --target toots.txt --output toots.cleaned.txt
+
+
+corpus:
+  summary: "わかちがきしてmarkovで利用しやすいデータにする"
+  command: python corpus.py --target toots.cleaned.txt --output toots.corpus.txt
+
+
+learn:
+  summary: "markovを用いて学習させる"
+  command: python learn_markov.py --target toots.corpus.txt --output toots.markovify.json
+
+
+sentence:
+  summary: "文章を生成"
+  command: python generate_sentence.py --target toots.markovify.json
