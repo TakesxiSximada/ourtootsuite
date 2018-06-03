@@ -19,7 +19,7 @@ def main(argv=sys.argv[1:]):
     parser.add_argument('--ngwords', default='NG_WORDS.txt')
     parser.add_argument('--endwords', default='END_WORDS.txt')
     parser.add_argument('--conf', default='~/.config/mastodon/mstdn.jp.sub/user.txt')
-    parser.add_argument('--interval', type=int, default=2)
+    parser.add_argument('--interval', type=int, default=60)
 
     opts = parser.parse_args(argv)
 
