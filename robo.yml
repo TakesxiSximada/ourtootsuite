@@ -42,6 +42,11 @@ sentence:
   command: python generate_sentence.py --target toots.markovify.json --count 100
 
 
+t:
+  summary: "bot実行"
+  command: python bot.py --target toots.markovify.json --interval 60
+
+
 serve:
   summary: "APIサーバ起動"
   command: FLASK_APP=serve.py flask run
