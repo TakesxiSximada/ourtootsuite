@@ -3,6 +3,20 @@ help:
   exec: echo "Enjoy SNS!"
 
 
+enc:
+  summary: "NG_WORDSとEND_WORDSを圧縮"
+  command: |
+    base64 < END_WORDS.txt | gzip > END_WORDS.dat
+    base64 < NG_WORDS.txt | gzip > NG_WORDS.dat
+
+
+dec:
+  summary: "NG_WORDSとEND_WORDSを解凍"
+  command: |
+    gzip -dc END_WORDS.dat | base64 -d > END_WORDS.txt
+    gzip -dc NG_WORDS.dat | base64 -d > NG_WORDS.txt
+
+
 export:
   summary: "MongoDBからTootを抽出してtextファイルに出力します"
   command: mongo --quiet mstdn ./export-toot.js > toots.txt
@@ -25,4 +39,9 @@ learn:
 
 sentence:
   summary: "文章を生成"
-  command: python generate_sentence.py --target toots.markovify.json
+  command: python generate_sentence.py --target toots.markovify.json --count 100
+
+
+serve:
+  summary: "APIサーバ起動"
+  command: FLASK_APP=serve.py flask run

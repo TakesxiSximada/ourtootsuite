@@ -1,0 +1,8 @@
+*.txt
+END_WORDS.txt
+NG_WORDS.txt
+markov.data
+toots.cleaned.txt
+toots.corpus.txt
+toots.markovify.json
+toots.txt
