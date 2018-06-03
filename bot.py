@@ -49,7 +49,7 @@ def main(argv=sys.argv[1:]):
                         'spoiler_text': None,
                         'visibility': 'unlisted',
                     })
-                print(res)
+                print(res, sentence)
         except SentenceGenerationError:
             pass
 
