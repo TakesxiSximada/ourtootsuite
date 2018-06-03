@@ -8,7 +8,7 @@ $ robo
   dec – NG_WORDSとEND_WORDSを解凍
   enc – NG_WORDSとEND_WORDSを圧縮
   export – MongoDBからTootを抽出してtextファイルに出力します
-  help – snstoolsはsns関連で使っているツールです
+  help – Display usage
   learn – markovを用いて学習させる
   sentence – 文章を生成
   serve – APIサーバ起動
