@@ -1,6 +1,6 @@
 help:
-  summary: "snstoolsはsns関連で使っているツールです"
-  exec: echo "Enjoy SNS!"
+  summary: "Display usage"
+  exec: echo "Enjoy toot!"
 
 
 enc:
